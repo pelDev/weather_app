@@ -67,19 +67,24 @@ class _MyHomePageState extends State<MyHomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 20.0),
-                Text(
-                  "Currently in Lagos",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
+                Center(
+                  child: Text(
+                    "Currently in Lagos",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-                SizedBox(height: 10.0),
+                SizedBox(height: 50.0),
                 Text(
                   "Temperature",
                   style: TextStyle(
                     fontSize: 16,
                   ),
+                ),
+                SizedBox(
+                  height: 5.0,
                 ),
                 Container(
                   width: double.infinity,
@@ -87,50 +92,53 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        blurRadius: 5.0,
-                        color: Colors.grey[100],
+                        blurRadius: 10.0,
+                        color: Colors.grey[300],
                       )
                     ],
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      FaIcon(
-                        FontAwesomeIcons.thermometerHalf,
-                        size: 50.0,
-                      ),
-                      Container(
-                        width: 1.0,
-                        height: double.infinity,
-                        color: Colors.black,
-                      ),
-                      RichText(
-                        text: TextSpan(
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: temp != null
-                                  ? temp.toString() + "\u00B0"
-                                  : "Loading...",
-                              style: TextStyle(
-                                fontSize: 24.0,
-                              ),
-                            ),
-                            TextSpan(
-                              text: temp != null ? "c" : "",
-                              style: TextStyle(
-                                fontSize: 18.0,
-                              ),
-                            ),
-                          ],
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // SizedBox(
+                        //   width: 10.0,
+                        // ),
+                        FaIcon(
+                          FontAwesomeIcons.thermometerHalf,
+                          size: 40.0,
                         ),
-                      ),
-                    ],
+                        Container(
+                          width: 1.0,
+                          height: 20.0,
+                          color: Colors.black,
+                        ),
+                        RichText(
+                          text: TextSpan(
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: temp != null
+                                    ? temp.toString() + "\u00B0"
+                                    : "Loading...",
+                                style: TextStyle(
+                                  fontSize: 24.0,
+                                ),
+                              ),
+                              TextSpan(
+                                text: temp != null ? "c" : "",
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(height: 10.0),
@@ -140,39 +148,42 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontSize: 16,
                   ),
                 ),
+                SizedBox(
+                  height: 5.0,
+                ),
                 Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        blurRadius: 5.0,
-                        color: Colors.grey[100],
+                        blurRadius: 10.0,
+                        color: Colors.grey[300],
                       )
                     ],
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      FaIcon(
-                        FontAwesomeIcons.sun,
-                        size: 50.0,
-                      ),
-                      Container(
-                        width: 1.0,
-                        height: double.infinity,
-                        color: Colors.black,
-                      ),
-                      Text(
-                        humidity != null ? humidity.toString() : "Loading...",
-                        style: TextStyle(
-                          fontSize: 24.0,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.sun,
+                          size: 40.0,
                         ),
-                      ),
-                    ],
+                        Container(
+                          width: 1.0,
+                          height: 20.0,
+                          color: Colors.black,
+                        ),
+                        Text(
+                          humidity != null ? humidity.toString() : "Loading...",
+                          style: TextStyle(
+                            fontSize: 24.0,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(height: 10.0),
@@ -182,39 +193,92 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontSize: 16,
                   ),
                 ),
+                SizedBox(
+                  height: 5.0,
+                ),
                 Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        blurRadius: 5.0,
-                        color: Colors.grey[100],
+                        blurRadius: 10.0,
+                        color: Colors.grey[300],
                       )
                     ],
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      FaIcon(
-                        FontAwesomeIcons.wind,
-                        size: 50.0,
-                      ),
-                      Container(
-                        width: 1.0,
-                        height: double.infinity,
-                        color: Colors.black,
-                      ),
-                      Text(
-                        windSpeed != null ? windSpeed.toString() : "Loading...",
-                        style: TextStyle(
-                          fontSize: 24.0,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.wind,
+                          size: 40.0,
                         ),
-                      ),
+                        Container(
+                          width: 1.0,
+                          height: 20.0,
+                          color: Colors.black,
+                        ),
+                        Text(
+                          windSpeed != null
+                              ? windSpeed.toString()
+                              : "Loading...",
+                          style: TextStyle(
+                            fontSize: 24.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                //
+                SizedBox(height: 10.0),
+                Text(
+                  "Description",
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 10.0,
+                        color: Colors.grey[300],
+                      )
                     ],
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.cloud,
+                          size: 40.0,
+                        ),
+                        Container(
+                          width: 1.0,
+                          height: 20.0,
+                          color: Colors.black,
+                        ),
+                        Text(
+                          description != null
+                              ? description.toString()
+                              : "Loading...",
+                          style: TextStyle(
+                            fontSize: 24.0,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
